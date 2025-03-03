@@ -1,4 +1,4 @@
-package com.devmaster.lesson04;
+package com.example.devmaster.lesson04;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,6 @@ public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		System.out.println("Welcome to lesson04");
 	}
 
 }
