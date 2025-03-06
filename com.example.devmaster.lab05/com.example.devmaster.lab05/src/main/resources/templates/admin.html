@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản trị nội dung</title>
+</head>
+<body>
+<th:block th:replace="layout.html :: content">
+    <section>
+        <h2>Trang Quản Trị</h2>
+        <p>Chọn chức năng quản lý:</p>
+        <ul>
+            <li><a th:href="@{/admin/list}">Danh sách nội dung</a></li>
+            <li><a th:href="@{/admin/add}">Thêm nội dung mới</a></li>
+        </ul>
+    </section>
+</th:block>
+</body>
+</html>

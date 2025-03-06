@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LabGuide05</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <h1>LabGuide05 - Hệ thống quản lý</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Trang chủ</a></li>
+            <li><a th:href="@{/admin}">Quản trị</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Nội dung chính -->
+<main>
+    <th:block th:insert="~{::content}"></th:block>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 LabGuide05 - All rights reserved</p>
+</footer>
+</body>
+</html>

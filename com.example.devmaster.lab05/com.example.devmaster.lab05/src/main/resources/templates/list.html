@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Nội Dung</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions a {
+            margin-right: 10px;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+        }
+        .actions .delete {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="layout.html :: content">
+    <section>
+        <h2>Danh Sách Nội Dung</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tiêu Đề</th>
+                <th>Mô Tả</th>
+                <th>Hành Động</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="content : ${contents}">
+                <td th:text="${content.id}"></td>
+                <td th:text="${content.title}"></td>
+                <td th:text="${content.description}"></td>
+                <td class="actions">
+                    <a th:href="@{/admin/edit/{id}(id=${content.id})}">Sửa</a>
+                    <a th:href="@{/admin/delete/{id}(id=${content.id})}" class="delete">Xóa</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <a th:href="@{/admin/add}" style="display: inline-block; padding: 10px 15px; background: green; color: white; text-decoration: none; border-radius: 5px;">Thêm mới</a>
+    </section>
+</th:block>
+</body>
+</html>

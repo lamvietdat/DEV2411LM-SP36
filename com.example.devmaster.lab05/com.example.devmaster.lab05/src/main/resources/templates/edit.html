@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa Nội Dung</title>
+</head>
+<body>
+<th:block th:replace="layout.html :: content">
+    <h2>Sửa Nội Dung</h2>
+    <form th:action="@{/admin/edit}" method="post" th:object="${content}">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Tiêu Đề:</label>
+        <input type="text" th:field="*{title}" required>
+
+        <label>Mô Tả:</label>
+        <textarea th:field="*{description}" required></textarea>
+
+        <button type="submit">Cập Nhật</button>
+    </form>
+    <a th:href="@{/admin/list}">Quay lại danh sách</a>
+</th:block>
+</body>
+</html>

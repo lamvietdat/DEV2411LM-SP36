@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Nội Dung</title>
+    <style>
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="layout.html :: content">
+    <h2>Thêm Nội Dung</h2>
+    <form th:action="@{/admin/add}" method="post" th:object="${content}">
+        <label>Tiêu Đề:</label>
+        <input type="text" th:field="*{title}" required>
+
+        <label>Mô Tả:</label>
+        <textarea th:field="*{description}" required></textarea>
+
+        <button type="submit">Lưu</button>
+    </form>
+    <a th:href="@{/admin/list}">Quay lại danh sách</a>
+</th:block>
+</body>
+</html>

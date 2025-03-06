@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+</head>
+<body>
+<th:block th:replace="layout.html :: content">
+    <section class="intro">
+        <h2>Chào mừng đến với LabGuide05!</h2>
+        <p>Hệ thống giúp bạn quản lý nội dung.</p>
+        <a th:href="@{/admin}" class="btn">Vào trang quản trị</a>
+    </section>
+</th:block>
+</body>
+</html>
